@@ -18,8 +18,8 @@ const MovieDetail = () => {
         const genre = MovieDetailData.genres.find((g) => g.id === genreId);
         return genre ? genre.name : null; // 해당 장르 ID가 있으면 이름 반환
         })
-        .filter((name) => name) // null 값 제거
-        .join(", "); // 콤마로 구분해서 문자열로 변환
+        .filter((name) => name) // null 값 제거, .filter()는 true인 값만 남기고, false인 값(= falsy한 값 =null )을 제거하는 역할
+        .join("/ "); // 슬래시로 구분해서 문자열로 변환
 
 
   // [ useNavigate ] : 메인으로 이동하는 버튼에 연결
@@ -38,8 +38,8 @@ const MovieDetail = () => {
         </div>
 
         <div className={styles.secdiv}>
-        <p className={styles.pcolor}>평점: {movie.vote_average.toFixed(1)}</p>
-        <p className={styles.pcolor}>장르: {genres}</p>
+        <p className={styles.pcolor}>평점 : {movie.vote_average.toFixed(1)} </p>
+        <p className={styles.pcolor}>장르 : {genres} </p>
         </div>
 
         <div className={styles.tirdiv}>
@@ -50,7 +50,7 @@ const MovieDetail = () => {
         <button 
             onClick={() => navigate('/')} 
             className={styles.button1}>
-            메인으로 돌아가기
+            MAIN 🪧
         </button>
       </div>
       

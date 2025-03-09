@@ -17,7 +17,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           {/* 🔽 index : 부모 라우트(path="/")의 기본 페이지를 설정 */}
           <Route index element={<MovieCard />} />
-          {/* url 파라미터명 id 로 설정 (id 값을 받아옴) */}
+          {/* 🔽 url 파라미터명 id 로 설정 (id 값을 받아옴) */}
           <Route path="details/:id" element={<MovieDetail />} />
         </Route>
       </Routes>

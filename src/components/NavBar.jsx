@@ -9,10 +9,13 @@ const NavBar = () => {
     <a href="/">
         <img src={img} className={styles.img1}/>
     </a>
-    <input className={styles.input1} ></input>
+    <div className={styles.firdiv}>
+    <input className={styles.input1}></input>
+    <button className={styles.btn1}> 🔍 </button>
+    </div>
     <div className={styles.secdiv}>
-    <button className={styles.btn}> 로그인 </button>
-    <button className={styles.btn}> 회원가입 </button>
+    <button className={styles.btn2}> 로그인 </button>
+    <button className={styles.btn2}> 회원가입 </button>
     </div>
     </nav>
     </>

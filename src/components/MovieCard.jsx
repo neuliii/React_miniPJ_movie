@@ -14,6 +14,7 @@ const MovieCard = () => {
           <Link key={movie.id} to={`/details/${movie.id}`}>
             <div className={styles.secdiv}>
               <img className={styles.img1} src={imageUrl} alt={movie.title} />
+              <div className={styles.thrdiv}></div>
               <h3 className={styles.h3title}>{movie.title}</h3>
               <p className={styles.pvote}>평점 : {movie.vote_average.toFixed(1)}</p>
             </div>
