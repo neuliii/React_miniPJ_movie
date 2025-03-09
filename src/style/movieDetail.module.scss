@@ -1,0 +1,60 @@
+// MovieDetail 컴포넌트 scss 적용
+
+.firdiv{
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin: 30px;
+}
+.titlediv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 50px;
+}
+.h1title {
+    font-size: 25px;
+    font-weight: bold;
+}
+.secdiv{
+    display: flex;
+    font-size: 17px;
+    gap: 10px;
+    justify-content: center;
+    height: 50px;
+}
+.pcolor{
+    color: gray;
+}
+.tirdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.overview{
+    color: rgb(77, 76, 76);
+    font-size: 14px;
+    height: 300px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.button1{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(84, 84, 84);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    &:hover{
+        background-color: black;
+    }
+}
+
+
