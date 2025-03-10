@@ -6,9 +6,9 @@ const NavBar = () => {
   return (
     <>
     <nav className={styles.nav1}>
-    <a href="/">
+    <Link to={'/'}>
         <img src={img} className={styles.img1}/>
-    </a>
+    </Link>
     <div className={styles.firdiv}>
     <input className={styles.input1}></input>
     <button className={styles.btn1}> 🔍 </button>

@@ -2,12 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import movieListData from "../data/movieListData.json";
 import styles from "../style/movieCard.module.scss"
+import MovieSlider from "../components/MovieSlider.jsx";
 
 const MovieCard = () => {
   return (
+    <>
     <div className={styles.firdiv}>
+    {/* <MovieSlider /> */}
       {movieListData.results.map((movie) => {
         const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    
 
         return (
           // 링크의 감싸진 모든 요소 클릭 시 url 이동 (링크 이동)
@@ -19,9 +23,11 @@ const MovieCard = () => {
               <p className={styles.pvote}>평점 : {movie.vote_average.toFixed(1)}</p>
             </div>
           </Link>
+          
         );
       })}
     </div>
+    </>
   );
 };
 
