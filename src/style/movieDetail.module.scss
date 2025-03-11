@@ -10,6 +10,11 @@
     margin: 60px 30px;
 
 }
+.img1{
+    width: 300px;
+    height: 450px;
+    border-radius: 0.5rem;
+}
 .titlediv {
     display: flex;
     justify-content: center;
@@ -25,11 +30,26 @@
     display: flex;
     font-size: 17px;
     gap: 10px;
+    margin: 20px;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 50px;
 }
 .pcolor{
     color: gray;
+}
+.list{
+    color: gray;
+    border: 1px solid gray;
+    border-radius: 15px;
+    margin: 0px 5px;
+    padding: 5px 10px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
 }
 .tirdiv{
     display: flex;
@@ -39,12 +59,15 @@
 .overview{
     color: rgb(77, 76, 76);
     font-size: 14px;
-    height: 300px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    max-width: 600px;  // 최대 너비 설정 (필요하면 조절)
+    min-height: 100px;  // 최소 높이 설정
+    padding: 10px;  // 내부 여백 추가
+    line-height: 1.5;  // 줄 간격 조절
+    word-wrap: break-word; // 긴 단어 줄 바꿈
 }
 .button1{
     margin-top: 10px;
