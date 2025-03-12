@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import MovieDetail from './components/MovieDetail';
 import Layout from './components/Layout';
 import MovieCard from './components/MovieCard';
+import Search from './components/Search';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route index element={<MovieCard />} />
           {/* 🔽 url 파라미터명 id 로 설정 (id 값을 받아옴) */}
           <Route path="details/:id" element={<MovieDetail />} />
+          <Route path="/search" element={<Search />} />
         </Route>
       </Routes>
 

@@ -1,10 +1,10 @@
 // MovieCard 컴포넌트 scss 적용
 
-.firdiv{
+.firdiv {
     display: flex;
     flex-wrap: wrap;
-    // gap: 10px;
     justify-content: center;
+    align-items: stretch; // 높이를 동일하게 유지
     margin-top: 60px;
     transition: all 0.2s linear;
 }
@@ -12,38 +12,132 @@
 .secdiv {
     display: flex;
     flex-direction: column;
+    justify-content: space-between; // 하단 정렬 유지
     align-items: center;
-    justify-content: center;
     border: 1px solid gray;
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px;
     margin: 10px;
     gap: 10px;
     transition: all 0.2s linear;
-}
-.secdiv{
-    &:hover {
-        transform: scale(1.03);
-        box-shadow: 10px 10px 15px -2px rgba(255, 255, 255, 0.25);
-      }
+    // width: 300px; // 카드 고정 너비
+    min-height: 500px; // 카드의 최소 높이를 설정
+    width: 250px; // 카드 너비 조정
+    flex-grow: 1; // 높이 균일하게 맞추기
+    // min-height: auto; // 높이 자동 조정
 }
 
-.img1{
-    width: 300px;
-    height: 400px;
-    padding: 20px;
-    border-radius: 0.5rem;
+.secdiv:hover {
+    transform: scale(1.03);
+    box-shadow: 10px 10px 15px -2px rgba(255, 255, 255, 0.25);
 }
-.thrdiv{
+
+.img1 {
+    width: 250px;
+    // height: 350px;
+    height: 350px; // 최대 높이 제한
+    object-fit: cover;
+}
+
+.thrdiv {
     width: 250px;
     height: 1px;
     background-color: gray;
 }
+
 .h3title {
     font-size: 20px;
     font-weight: bold;
+    width: 100%; // 글자 길어질 때 줄바꿈 유지
+    text-align: center; // 가운데 정렬
+    word-break: keep-all; // 단어가 길어질 경우 줄바꿈
+
+    // 제목이 2줄까지만 나오도록 설정
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; // 줄 바꿈 유지
+    // min-height: 50px; // 높이 강제 조정 (제목이 2줄일 때 기준)
+    min-height: 50px; // 제목 높이 균일하게 맞추기
 }
-.pvote{
+
+.pvote {
     font-size: 13px;
     color: gray;
 }
+/* 📌 반응형 (창 크기 줄일 때 자동 조절) */
+@media (max-width: 1024px) {  /* 태블릿 */
+    .secdiv {
+      max-width: 250px;
+    }
+    .img1 {
+      width: 250px;
+      height: 350px;
+    }
+  }
+  
+  @media (max-width: 768px) {  /* 작은 태블릿 & 큰 휴대폰 */
+    .secdiv {
+      max-width: 200px;
+      min-height: 420px;  // ✅ 모바일에서 카드 높이 조정
+    }
+    .img1 {
+      width: 200px;
+      height: 300px;
+    }
+    .thrdiv {
+        width: 100%;
+        height: 1px;
+        background-color: gray;
+      }
+      .h3title {
+        font-size: 16px;
+        min-height: 45px;  // 모바일에서 높이 조정
+    }
+  }
+  
+@media (max-width: 480px) {  /* 📱 모바일 */
+    .firdiv {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);  // 한 줄에 두 개씩 배치
+      gap: 10px;  // 카드 사이 간격
+      padding: 0 10px;
+    }
+  
+    .secdiv {
+      width: 100%;  // 부모(grid) 크기에 맞춤
+    //   height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      min-height: 380px;  // ✅ 모바일에서 카드 높이 조정
+    }
+  
+    .img1 {
+      width: 100%;  // 부모 크기에 맞춤
+      height: auto;
+      max-height: 200px;  // 높이 고정
+      object-fit: cover;  // 비율 유지하면서 자르기
+    }
+  
+    .h3title {
+      font-size: 12px;
+      text-align: center;
+      min-height: 40px;
+
+    }
+  
+    .pvote {
+      font-size: 10px;
+      color: gray;
+    }
+  
+    .thrdiv {
+      width: 80%;
+      height: 1px;
+      background-color: gray;
+    }
+  }

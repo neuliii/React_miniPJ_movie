@@ -1,15 +1,16 @@
 // MovieDetail 컴포넌트 scss 적용
 
-.firdiv{
-    text-align: center;
-    padding: 20px;
+.firdiv {
     display: flex;
+    // flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 100px;
+    align-items: center; // 모든 요소 중앙 정렬
+    text-align: center;
+    gap: 30px;
+    padding: 20px;
     margin: 60px 30px;
-
 }
+
 .img1{
     width: 300px;
     height: 450px;
@@ -22,52 +23,84 @@
     gap: 10px;
     height: 50px;
 }
+// .h1title {
+//     font-size: 25px;
+//     font-weight: bold;
+// }
 .h1title {
-    font-size: 25px;
+    font-size: 22px;
     font-weight: bold;
+    white-space: nowrap; // 타이틀이 줄바꿈되지 않도록 설정
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90%; // 너무 길어지지 않도록 조정
 }
-.secdiv{
+
+// .secdiv{
+//     display: flex;
+//     font-size: 17px;
+//     gap: 10px;
+//     margin: 20px;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     height: 50px;
+// }
+.secdiv {
     display: flex;
-    font-size: 17px;
-    gap: 10px;
-    margin: 20px;
+    // flex-direction: row;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    flex-wrap: wrap; // 장르가 여러 개일 때 자동 줄바꿈
+    gap: 10px;
+    margin: 10px 0;
 }
+
 .pcolor{
     color: gray;
 }
-.list{
-    color: gray;
+
+.list {
+    font-size: 14px;
     border: 1px solid gray;
     border-radius: 15px;
-    margin: 0px 5px;
-    padding: 5px 10px;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     float: right;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
+    margin: 0px 2px;
 }
-.tirdiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+// .tirdiv{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+// .overview{
+//     color: rgb(77, 76, 76);
+//     font-size: 14px;
+//     text-align: center;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     max-width: 600px;  // 최대 너비 설정 (필요하면 조절)
+//     min-height: 100px;  // 최소 높이 설정
+//     padding: 10px;  // 내부 여백 추가
+//     line-height: 1.5;  // 줄 간격 조절
+//     word-wrap: break-word; // 긴 단어 줄 바꿈
+// }
+.tirdiv {
+    max-width: 90vw; // 너무 좁아지지 않도록 조정
 }
-.overview{
-    color: rgb(77, 76, 76);
+
+.overview {
     font-size: 14px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    line-height: 1.5;
+    word-wrap: break-word;
     max-width: 600px;  // 최대 너비 설정 (필요하면 조절)
     min-height: 100px;  // 최소 높이 설정
-    padding: 10px;  // 내부 여백 추가
-    line-height: 1.5;  // 줄 간격 조절
-    word-wrap: break-word; // 긴 단어 줄 바꿈
 }
 .button1{
     margin-top: 10px;
@@ -82,3 +115,96 @@
 }
 
 
+/* 📌 태블릿 */
+@media (max-width: 1024px) {
+    .firdiv {
+      flex-direction: column;
+      gap: 40px;
+    }
+    .img1 {
+      width: 250px;
+      height: 375px;
+    }
+    .h1title {
+      font-size: 22px;
+    }
+    .secdiv {
+      font-size: 15px;
+    }
+    .overview {
+      max-width: 90%;
+    }
+  }
+  
+//   /* 📌 작은 태블릿 & 큰 휴대폰 */
+//   @media (max-width: 768px) {
+//     .firdiv {
+//       flex-direction: column;
+//       gap: 30px;
+//     }
+//     .img1 {
+//       width: 200px;
+//       height: 300px;
+//     }
+//     .h1title {
+//       font-size: 20px;
+//     }
+//     .secdiv {
+//       font-size: 14px;
+//     }
+//     .overview {
+//       max-width: 90%;
+//       font-size: 13px;
+//     }
+//     .list {
+//       font-size: 13px;
+//     }
+//   }
+
+@media (max-width: 768px) {  
+    .h1title {
+        font-size: 18px;
+    }
+    
+    .list {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .overview {
+        font-size: 12px;
+        max-width: 95vw; // 모바일에서 최대한 넓게 보이도록 조정
+    }
+}
+  
+  /* 📌 모바일 */
+  @media (max-width: 480px) {
+    .firdiv {
+      flex-direction: column;
+      gap: 20px;
+      margin: 20px;
+    }
+    .img1 {
+      width: 150px;
+      height: 225px;
+    }
+    .h1title {
+      font-size: 18px;
+    }
+    .secdiv {
+      font-size: 12px;
+      margin: 10px;
+    }
+    .list {
+      font-size: 12px;
+      padding: 3px 7px;
+    }
+    .overview {
+      max-width: 100%;
+      font-size: 12px;
+    }
+    .button1 {
+      padding: 8px;
+      font-size: 14px;
+    }
+  }

@@ -11,12 +11,15 @@ const useFetchCard= () => {
 
     useEffect(() => {
         // 함수를 async로 선언하면 자동으로 해당 함수가 비동기 함수 선언 , Promise 반환
+        // Promise는 비동기 함수가 반환하는 객체
+        // 대기(Pending) / 성공(Fulfilled) / 실패(Rejected)
         const fetchMovies = async () => {
             setLoading(true);
             setError(null);
 
             try {
                 // await는 비동기 작업이 끝날 때까지 기다려주는 역할
+                // await 자체가 Promise의 .then() 역할
                 const response = await fetch(`${API_URL}/movie/popular?language=ko`, {
                     // API 요청 방식(HTTP 메서드) 중 "GET": 서버에서 데이터를 조회하는 요청
                     method : "GET",

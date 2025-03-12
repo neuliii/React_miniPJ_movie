@@ -20,14 +20,14 @@ const MovieDetail = () => {
 
       <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} className={styles.img1} />
 
-      <div className='w-1/3'>
+      <div className={styles.line}>
         <div className={styles.titlediv}>
             <h1 className={styles.h1title}>{movie.title}</h1>
         </div>
 
         <div className={styles.secdiv}>
         <p className={styles.pcolor}>평점 : {movie.vote_average.toFixed(1)} </p>
-        <ul> {movie.genres.map((genre) =>  <li className={styles.list}> {genre.name} </li> )} </ul>
+        <ul> {movie.genres.map((genre, index) =>  <li key={index} className={styles.list}> {genre.name} </li> )} </ul>
         </div>
 
         <div className={styles.tirdiv}>

@@ -1,5 +1,7 @@
 // NavBar / Layout 컴포넌트 scss 적용
 
+$transition: background-color 0.2s ease, color 0.2s ease;
+
 .nav1{
     background-color: black;
     padding: 10px;
@@ -37,19 +39,18 @@
     align-items: center;
     gap: 10px;
 }
-.btn1{
-    // background-color: rgb(200, 200, 200);
-    width: 40px;
-    height: 40px;
-    background-color: rgb(200, 200, 200);
-    border: 1px solid black;
-    border-radius: 10px;
-    font-size: 15px;
-    text-align: center;
-    &:hover{
-        background-color: rgb(50, 50, 50);
-    }
-}
+// .btn1{
+//     width: 40px;
+//     height: 40px;
+//     background-color: rgb(200, 200, 200);
+//     border: 1px solid black;
+//     border-radius: 10px;
+//     font-size: 15px;
+//     text-align: center;
+//     &:hover{
+//         background-color: rgb(50, 50, 50);
+//     }
+// }
 .secdiv{
     justify-content: end;
     margin-right: 20px;
@@ -66,9 +67,136 @@
     &:hover{
         background-color: rgb(0, 0, 0);
         border: 1px solid white;
+        transition: $transition;
     }
 }
 
 .main1{
     padding: 20px;
+}
+
+// LIGHT MODE
+
+.light{
+    background-color: white;
+    color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    // fixed는 뷰포트(viewport, 즉 화면 전체) 기준으로 위치가 고정됨
+    position: fixed;
+    // left: 0; → 왼쪽 끝에 배치 / top: 0; → 화면 맨 위에 배치 / 즉, 화면의 최상단(왼쪽 위 모서리)에 고정됨
+    left: 0;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    // 다른 요소들보다 위에 배치되도록 설정
+    z-index: 9999; /* 다른 요소보다 더 위에 쌓이도록 높은 z-index 값 설정 */
+    transition: $transition;
+}
+.input2{
+    width: 400px;
+    height: 40px;
+    border: 2px solid rgb(100, 100, 100);
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 10px;
+    transition: $transition;
+}
+.btn3{
+    margin: 5px;
+    padding: 10px;
+    height: 40px;
+    background-color: rgb(230, 230, 230);
+    // color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: $transition;
+    &:hover{
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(0, 0, 0);
+        transition: $transition;
+    }
+}
+
+.line{
+    width: 20px;
+    height: 1px;
+}
+
+/* 반응형 스타일 적용 */
+@media (max-width: 1024px) { /* 태블릿 */
+    .img1 {
+        width: 150px;
+    }
+    .input1, .input2 {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) { /* 작은 태블릿 & 큰 휴대폰 */
+    .nav1, .light {
+        height: 60px;
+        padding: 5px;
+    }
+    .img1 {
+        width: 130px;
+    }
+    .secdiv{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+    .input1, .input2 {
+        width: 200px;
+        height: 35px;
+        font-size: 14px;
+    }
+    .btn2, .btn3 {
+        padding: 3px;
+        height: 35px;
+        font-size: 8px;
+        width: 40px;
+    }
+    .line{
+        width: 20px;
+        height: 1px;
+        background-color: gray;
+    }
+}
+
+@media (max-width: 480px) { /* 📱 모바일 */
+    .nav1, .light {
+        height: 55px;
+        padding: 5px;
+    }
+    .img1 {
+        width: 70px;
+    }
+    .secdiv{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+    .input1, .input2 {
+        width: 80px;
+        height: 20px;
+        font-size: 13px;
+    }
+    .btn2, .btn3 {
+        padding: 3px;
+        height: 30px;
+        font-size: 12px;
+        width: 40px;
+        font-size: 7px;
+    }
+    .line{
+        width: 20px;
+        height: 1px;
+        background-color: gray;
+    }
 }
